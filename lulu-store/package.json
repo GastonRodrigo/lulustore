@@ -1,0 +1,32 @@
+{
+  "name": "lulu-store",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "framer-motion": "^11.2.12",
+    "next": "14.2.4",
+    "node": "^20.15.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "^14.2.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "next/babel",
+      "next/core-web-vitals"
+    ]
+  }
+}
