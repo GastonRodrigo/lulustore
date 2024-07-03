@@ -10,7 +10,7 @@ export default function CartPage() {
 
   return (
     <Box maxW="container.xl" mx="auto" py={8}>
-      <Heading mb={6} color="pastelGreen.700">Your Cart</Heading>
+      <Heading mb={6} color="pastelGreen.700">Tu carrito</Heading>
       <VStack spacing={4} align="stretch">
         {cartItems.map((item) => (
           <Box key={item.id} p={4} borderWidth="1px" borderRadius="md" bg="white" boxShadow="sm">

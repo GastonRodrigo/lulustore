@@ -11,8 +11,8 @@ const ProductCard = ({ product }) => {
   const handleAddToCart = () => {
     addToCart(product);
     toast({
-      title: "Product added",
-      description: `${product.name} has been added to your cart.`,
+      title: "Producto agregado",
+      description: `${product.name} fue añadido a tu carrito.`,
       status: "success",
       duration: 3000,
       isClosable: true,

@@ -18,7 +18,7 @@ export default function Home({ selectedCategory }) {
 
   return (
     <Box maxW="container.xl" mx="auto" py={8}>
-      <Heading mb={6}>Our Products - {selectedCategory}</Heading>
+      <Heading mb={6}>{selectedCategory}</Heading>
       <ProductList products={filteredProducts} />
     </Box>
   );

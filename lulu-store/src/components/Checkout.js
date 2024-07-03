@@ -11,7 +11,7 @@ const Checkout = () => {
   const handleCheckout = () => {
     const phoneNumber = "+5491156436110";
     const message = encodeURIComponent(
-      `New order:\n\n${cartItems
+      `Nuevo pedido:\n\n${cartItems
         .map((item) => `${item.name} - $${item.price} x ${item.quantity}`)
         .join("\n")}\n\nTotal: $${cartItems.reduce(
         (sum, item) => sum + item.price * item.quantity,
