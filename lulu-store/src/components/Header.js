@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons';
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
-import lululogo from "../theme/arbol.png"
+import lululogo from "../theme/bird.png"
 
 const Header = ({ cartItemsCount, onCategorySelect, selectedCategory }) => {
   const categories = ["All", "Ropa Adultos", "Ropa de cama", "Baño", "Ropa Niños"];
@@ -26,7 +26,7 @@ const Header = ({ cartItemsCount, onCategorySelect, selectedCategory }) => {
               width={50} // Ajusta el tamaño según tus necesidades
               height={50} // Ajusta el tamaño según tus necesidades
             />
-            <Heading as="h1" size="lg" ml={2} color="pastelGreen.700">Lulu Store</Heading>
+            <Heading as="h1" size="lg" ml={2} color="pastelGreen.700">De todo un poco Lulu</Heading>
           </Flex>
         </Link>
         <Spacer />

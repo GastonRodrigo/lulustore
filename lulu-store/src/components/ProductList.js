@@ -1,6 +1,5 @@
 // src/components/ProductList.js
 "use client";
-
 import { SimpleGrid } from "@chakra-ui/react";
 import ProductCard from "./ProductCard";
 
