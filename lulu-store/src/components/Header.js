@@ -1,10 +1,10 @@
-// src/components/Header.js
 "use client";
-
 import { Box, Flex, Heading, Spacer, Button, Menu, MenuButton, MenuList, MenuItem, Badge } from "@chakra-ui/react";
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from 'next/navigation';
+import lululogo from "../theme/arbol.png"
 
 const Header = ({ cartItemsCount, onCategorySelect, selectedCategory }) => {
   const categories = ["All", "Ropa Adultos", "Ropa de cama", "Baño", "Ropa Niños"];
@@ -19,7 +19,15 @@ const Header = ({ cartItemsCount, onCategorySelect, selectedCategory }) => {
     <Box bg="pastelGreen.100" py={4} boxShadow="md">
       <Flex maxW="container.xl" mx="auto" align="center">
         <Link href="/" passHref>
-          <Heading as="h1" size="lg" cursor="pointer" color="pastelGreen.700">Lulu Store</Heading>
+          <Flex align="center" cursor="pointer">
+            <Image
+              src={lululogo} // Ajusta esta ruta a la ubicación de tu logo
+              alt="Lulu Store Logo"
+              width={50} // Ajusta el tamaño según tus necesidades
+              height={50} // Ajusta el tamaño según tus necesidades
+            />
+            <Heading as="h1" size="lg" ml={2} color="pastelGreen.700">Lulu Store</Heading>
+          </Flex>
         </Link>
         <Spacer />
         <Menu>
@@ -28,9 +36,9 @@ const Header = ({ cartItemsCount, onCategorySelect, selectedCategory }) => {
           </MenuButton>
           <MenuList bg="pastelGreen.50">
             {categories.map((category) => (
-              <MenuItem 
-                key={category} 
-                onClick={() => handleCategorySelect(category)} 
+              <MenuItem
+                key={category}
+                onClick={() => handleCategorySelect(category)}
                 _hover={{ bg: "pastelGreen.100" }}
                 bg={category === selectedCategory ? "pastelGreen.200" : ""}
               >
