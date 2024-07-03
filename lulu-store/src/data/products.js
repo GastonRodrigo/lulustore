@@ -7,9 +7,9 @@ function getRandomImage() {
   
   export const products = [
     // Ropa Adultos
-    { id: 1, name: "T-shirt", price: 19.99, category: "Ropa Adultos", image: getRandomImage() },
-    { id: 2, name: "Jeans", price: 49.99, category: "Ropa Adultos", image: getRandomImage() },
-    { id: 3, name: "Sweater", price: 39.99, category: "Ropa Adultos", image: getRandomImage() },
+    { id: 1, name: "T-shirt", price: 19.99, category: "Ropa Adultos", image: "https://acdn.mitiendanube.com/stores/001/843/621/products/remera-mars-7c26d2c9fee69ac0e117038892666423-1024-1024.png" },
+    { id: 2, name: "Jeans", price: 49.99, category: "Ropa Adultos", image: "https://http2.mlstatic.com/D_NQ_NP_626262-MLA54057589249_022023-O.webp" },
+    { id: 3, name: "Sweater", price: 39.99, category: "Ropa Adultos", image: "https://acdn.mitiendanube.com/stores/001/053/132/products/_mg_8055-11-787856a06a41dae4a716569590968338-1024-1024.jpg" },
     { id: 4, name: "Dress", price: 59.99, category: "Ropa Adultos", image: getRandomImage() },
     { id: 5, name: "Jacket", price: 79.99, category: "Ropa Adultos", image: getRandomImage() },
   
