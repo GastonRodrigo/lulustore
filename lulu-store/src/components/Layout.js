@@ -1,13 +1,16 @@
+// src/components/Layout.js
 import { Box } from "@chakra-ui/react";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <Box>
+    <Box display="flex" flexDirection="column" minHeight="100vh">
       <Header />
-      <Box maxW="container.xl" mx="auto" py={8}>
+      <Box flex="1" maxW="container.xl" mx="auto" py={8}>
         {children}
       </Box>
+      <Footer />
     </Box>
   );
 };

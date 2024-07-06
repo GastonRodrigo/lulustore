@@ -1,19 +1,24 @@
+// src/components/Header.js
 "use client";
 import { Box, Flex, Heading, Spacer, Button, Menu, MenuButton, MenuList, MenuItem, Badge } from "@chakra-ui/react";
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
+import { useCart } from "@/context/CartContext";
 import lululogo from "../theme/bird.png"
 
-const Header = ({ cartItemsCount, onCategorySelect, selectedCategory }) => {
+const Header = ({ onCategorySelect, selectedCategory }) => {
   const categories = ["All", "Ropa Adultos", "Ropa de cama", "Baño", "Ropa Niños"];
   const router = useRouter();
+  const { cartItems } = useCart();
 
   const handleCategorySelect = (category) => {
     onCategorySelect(category);
     router.push(`/?category=${encodeURIComponent(category)}`);
   };
+
+  const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <Box bg="pastelGreen.100" py={4} boxShadow="md">
@@ -21,10 +26,10 @@ const Header = ({ cartItemsCount, onCategorySelect, selectedCategory }) => {
         <Link href="/" passHref>
           <Flex align="center" cursor="pointer">
             <Image
-              src={lululogo} // Ajusta esta ruta a la ubicación de tu logo
+              src={lululogo}
               alt="Lulu Store Logo"
-              width={50} // Ajusta el tamaño según tus necesidades
-              height={50} // Ajusta el tamaño según tus necesidades
+              width={50}
+              height={50}
             />
             <Heading as="h1" size="lg" ml={2} color="pastelGreen.700">De todo un poco Lulu</Heading>
           </Flex>
@@ -50,7 +55,7 @@ const Header = ({ cartItemsCount, onCategorySelect, selectedCategory }) => {
         <Spacer />
         <Link href="/cart" passHref>
           <Button bg="pastelGreen.300" _hover={{ bg: "pastelGreen.400" }}>
-            Cart
+            Carrito
             {cartItemsCount > 0 && (
               <Badge ml={2} colorScheme="red" borderRadius="full" px={2}>
                 {cartItemsCount}
