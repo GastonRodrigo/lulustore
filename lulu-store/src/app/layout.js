@@ -6,11 +6,16 @@ import { CartProvider, useCart } from "@/context/CartContext";
 import theme from "@/theme/theme";
 import { useState } from 'react';
 
+
 export default function RootLayout({ children }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
     <html lang="en">
+      <head>
+        <title>De todo un poco Lulu</title>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body>
         <ChakraProvider theme={theme}>
           <CartProvider>
