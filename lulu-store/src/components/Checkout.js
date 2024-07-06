@@ -31,7 +31,7 @@ const Checkout = () => {
 
   const handleCheckout = () => {
     setIsLoading(true);
-    const phoneNumber = "+5491156436110";
+    const phoneNumber = "+5491158559526";
     const message = encodeURIComponent(
       `Nuevo pedido:\n\n${cartItems
         .map((item) => `${item.name} - $${item.price} - Talle: ${item.size} x ${item.quantity}`)
