@@ -8,7 +8,7 @@ import {
   useToast,
   Flex,
   IconButton,
-  Input,
+  Select,
   VStack,
   Modal,
   ModalOverlay,
@@ -31,11 +31,26 @@ const ProductCard = ({ product }) => {
   }, [product]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const getSizeOptions = (category) => {
+    switch(category) {
+      case "Ropa de cama":
+        return ["1 Plaza", "2 Plazas", "2 1/2 Plazas", "Queen", "King", "Otra"];
+      case "Ropa Adultos":
+        return ["S", "M", "L", "XL", "XXL"];
+      case "Ropa Niños":
+        return ["35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45"];
+      default:
+        return ["Talle Único"];
+    }
+  };
+
+  const sizeOptions = getSizeOptions(product.category);
+
   const handleAddToCart = () => {
     if (!size) {
       toast({
         title: "Error",
-        description: "Por favor ingresa un talle",
+        description: "Por favor selecciona un talle",
         status: "error",
         duration: 3000,
         isClosable: true,
@@ -114,12 +129,16 @@ const ProductCard = ({ product }) => {
         <VStack spacing={2} p={4} align="stretch" bg="gray.50">
           <Text fontWeight="bold" color="neutral.800" noOfLines={1}>{product.name}</Text>
           <Text color="pastelGreen.600">${product.price}</Text>
-          <Input
-            placeholder="Ingresa el talle"
+          <Select
+            placeholder="Selecciona el talle"
             value={size}
             onChange={(e) => setSize(e.target.value)}
             size="sm"
-          />
+          >
+            {sizeOptions.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </Select>
           <Button 
             bg="pastelGreen.300" 
             _hover={{ bg: "pastelGreen.400" }} 
